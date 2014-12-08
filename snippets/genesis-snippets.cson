@@ -55,10 +55,8 @@
       remove_action( 'genesis_after_header', 'genesis_do_nav' );
     """
   "Add Primary Nav":
-    prefis: "apn"
-    body: """
-      add_action( '$1', 'genesis_do_nav' );
-    """
+    prefix: "apn"
+    body: "add_action( '$1', 'genesis_do_nav' );"
   "Remove Secondary Nav":
     prefix: "rsn"
     body: """
