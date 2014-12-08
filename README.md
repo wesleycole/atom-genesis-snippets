@@ -31,3 +31,8 @@ Genesis Snippets works in that your text that you right to call a snippet is com
 - **apn**: add primary nav
 - **rsn**: remove secondary nav
 - **asn**: add secondary nav
+
+| Snippet Code | Description          |
+| ------------- | ----------- |
+| aa      | add action |
+| ra     | remove action     |
