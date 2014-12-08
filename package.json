@@ -1,0 +1,16 @@
+{
+  "name": "genesis-snippets",
+  "main": "./lib/genesis-snippets",
+  "version": "0.0.0",
+  "description": "Essential snippets for the Genesis framework",
+  "activationCommands": {
+    "atom-workspace": "genesis-snippets:toggle"
+  },
+  "repository": "https://github.com/atom/genesis-snippets",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
