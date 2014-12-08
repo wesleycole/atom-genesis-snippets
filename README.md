@@ -19,9 +19,9 @@ Genesis Snippets works in that your text that you right to call a snippet is com
 
 ### Snippets
 
-| Snippet Code  | Description |
-| ------------- | ----------- |
-| aa    | add action |
+| Snippet Code  | Description | Code        |
+| ------------- | ----------- | ------------|
+| aa    | add action | `add_action();`
 | ra    | remove action     |
 | rst   | remove site title |
 | ast   | add site title |
