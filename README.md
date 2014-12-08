@@ -43,3 +43,6 @@ The `$1` and `$2` represent placeholders where you will be able to *tab* through
 | abc   | add body class | http://my.studiopress.com/snippets/custom-body-class/ |
 | lfw   | layout full width | `add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );` |
 | rl    | remove layout (unregister) | `genesis_unregister_layout( '${1 layout-name}' );` |
+
+## Notes
+This may not work with other autocomplete packages. I am going to do some testing with major packages like Emmet to see how it handles the prefixes that I am using.
