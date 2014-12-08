@@ -1,30 +1,30 @@
 ".text.html":
   "Add Action":
-    prefix: "add"
-    body: "add_action($1,$2);"
+    prefix: "aa"
+    body: "add_action( '$1','$2' );"
   "Remove Action":
-    prefix: "remove"
-    body: "remove_action($1,$2);"
+    prefix: "ra"
+    body: "remove_action( '$1','$2' );"
   "Remove Site Title":
-    prefix: "remove-site-title"
+    prefix: "rst"
     body: "remove_action( 'genesis_site_title', 'genesis_seo_site_title' );"
   "Remove Site Description":
-    prefix: "remove-site-description"
+    prefix: "rsd"
     body: "remove_action( 'genesis_site_description', 'genesis_seo_site_description' );"
   "Remove Header Right Widget":
-    prefix: "remove-header-widget"
+    prefix: "rhw"
     body: "unregister_sidebar( 'header-right' );"
   "Remove Entry Meta":
-    prefix: "remove-entry-meta"
+    prefix: "rem"
     body: "remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );"
   "Remove Entry Title":
-    prefix: "remove-entry-title"
+    prefix: "ret"
     body: "remove_action( 'genesis_entry_header', 'genesis_do_post_title' );"
   "Remove Post Image":
-    prefix: "remove-post-image"
+    prefix: "rei"
     body: "remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );"
   "Customize Footer":
-    prefix: "customize-footer"
+    prefix: "cfc"
     body: """
       remove_action( 'genesis_footer', 'genesis_do_footer' );
       add_action( 'genesis_footer', 'sp_custom_footer' );
@@ -34,23 +34,29 @@
       <?php
       }
     """
-  "Reposition Primary Nav":
-    prefix: "move-primary-nav"
+  "Remove Primary Nav":
+    prefix: "rpn"
     body: """
       remove_action( 'genesis_after_header', 'genesis_do_nav' );
-      add_action( '$1', '$2' );
     """
-  "Reposition Secondary Nav":
-    prefix: "move-secondary-nav"
+  "Add Primary Nav":
+    prefis: "apn"
+    body: """
+      add_action( '$1', 'genesis_do_nav' );
+    """
+  "Remove Secondary Nav":
+    prefix: "rsn"
     body: """
       remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-      add_action( 'genesis_before_header', 'genesis_do_subnav' );
     """
+  "Add Secondary Nav":
+    prefix: "asn"
+    body: "add_action( '$1', '$genesis_do_subnav' );"
   "Unregister Nav":
-    prefix: "unregister-secondary-nav"
+    prefix: "atsn"
     body: "add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );"
   "Add Body Class":
-    prefix: "add-body-class"
+    prefix: "abc"
     body: """
       add_filter( 'body_class', 'sp_body_class' );
       function sp_body_class( $classes ) {
@@ -61,22 +67,8 @@
       }
     """
   "Force Full Width Layout":
-    prefix: "force-full-width-layout"
+    prefix: "lf"
     body: "add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );"
   "Unregister Layout":
-    prefix: "unregister-layout"
+    prefix: "rl"
     body: "genesis_unregister_layout( '${1 layout-name}' );"
-  "Remove all Genesis Widgets":
-    prefix: "remove-genesis-widgets"
-    body: """
-      add_action( 'widgets_init', 'unregister_genesis_widgets', 20 );
-      function unregister_genesis_widgets() {
-      	  unregister_widget( 'Genesis_eNews_Updates' );
-    	  unregister_widget( 'Genesis_Featured_Page' );
-    	  unregister_widget( 'Genesis_Featured_Post' );
-    	  unregister_widget( 'Genesis_Latest_Tweets_Widget' );
-    	  unregister_widget( 'Genesis_Menu_Pages_Widget' );
-    	  unregister_widget( 'Genesis_User_Profile_Widget' );
-    	  unregister_widget( 'Genesis_Widget_Menu_Categories' );
-      }
-    """
