@@ -22,6 +22,7 @@ The `$1` and `$2` represent placeholders where you will be able to *tab* through
 
 | Snippet Code  | Description | Code        |
 | ------------- | ----------- | ------------|
+| af    | add function | function block with add action |
 | aa    | add action | `add_action( '$1', '$2' );` |
 | ra    | remove action     | `remove_action( '$1', '$2' );` |
 | rst   | remove site title | `remove_action( 'genesis_site_title', 'genesis_seo_site_title' );` |
