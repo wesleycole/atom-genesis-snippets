@@ -6,7 +6,7 @@
   "activationCommands": {
     "atom-workspace": "genesis-snippets:toggle"
   },
-  "repository": "https://github.com/atom/genesis-snippets",
+  "repository": "https://github.com/wesleycole/atom-genesis-snippets",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
