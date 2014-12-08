@@ -8,21 +8,36 @@
   "Remove Site Title":
     prefix: "rst"
     body: "remove_action( 'genesis_site_title', 'genesis_seo_site_title' );"
+  "Add Site Title":
+    prefix: "ast"
+    body: "add_action( '$1', 'genesis_seo_site_title' );"
   "Remove Site Description":
     prefix: "rsd"
     body: "remove_action( 'genesis_site_description', 'genesis_seo_site_description' );"
+  "Add Site Description":
+    prefix: "asd"
+    body: "add_action( '$1', 'genesis_seo_site_description' );"
   "Remove Header Right Widget":
     prefix: "rhw"
     body: "unregister_sidebar( 'header-right' );"
   "Remove Entry Meta":
     prefix: "rem"
     body: "remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );"
+  "Add Entry Meta":
+    prefix: "aem"
+    body: "add_action( '$1', 'genesis_post_info' );"
   "Remove Entry Title":
     prefix: "ret"
     body: "remove_action( 'genesis_entry_header', 'genesis_do_post_title' );"
+  "Add Entry Title":
+    prefix: "aet"
+    body: "add_action( '$1', 'genesis_do_post_title' );"
   "Remove Post Image":
     prefix: "rei"
     body: "remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );"
+  "Add Post Image":
+    prefix: "aei"
+    body: "add_action( '$1', 'genesis_do_post_format_image' );"
   "Customize Footer":
     prefix: "cfc"
     body: """
