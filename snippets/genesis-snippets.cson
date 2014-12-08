@@ -3,9 +3,9 @@
     prefix: "af"
     body: """
       add_action( '$1', '${2:function-name}' );
-      function ${2:function-name}() {
+      function ${2:function-name}() { ?>
         ${3:function}
-      }
+      <?php }
     """
   "Add Action":
     prefix: "aa"
