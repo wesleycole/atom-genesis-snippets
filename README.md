@@ -21,21 +21,24 @@ Genesis Snippets works in that your text that you right to call a snippet is com
 
 | Snippet Code  | Description | Code        |
 | ------------- | ----------- | ------------|
-| aa    | add action | `add_action();`
-| ra    | remove action     |
-| rst   | remove site title |
-| ast   | add site title |
-| rsd   | remove site description |
-| asd   | add site description |
-| rhw   | remove header widget |
-| rem   | remove entry meta |
-| aem   | add entry meta |
-| ret   | remove entry title |
-| aet   | add entry title |
-| rei   | remove entry image |
-| aei   | add entry image |
-| cfc   | customize footer copy |
-| rpn   | remove primary nav |
-| apn   | add primary nav |
-| rsn   | remove secondary nav |
-| asn   | add secondary nav |
+| aa    | add action | `add_action( '$1', '$2' );` |
+| ra    | remove action     | `remove_action( '$1', '$2' );` |
+| rst   | remove site title | `remove_action( 'genesis_site_title', 'genesis_seo_site_title' );` |
+| ast   | add site title | `add_action( '$1', 'genesis_seo_site_title' );` |
+| rsd   | remove site description | `remove_action( 'genesis_site_description', 'genesis_seo_site_description' );` |
+| asd   | add site description | `add_action( '$1', 'genesis_seo_site_description' );` |
+| rhw   | remove header widget | `unregister_sidebar( 'header-right' );` |
+| rem   | remove entry meta | `remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );` |
+| aem   | add entry meta | `add_action( '$1', 'genesis_post_info' );` |
+| ret   | remove entry title | `remove_action( 'genesis_entry_header', 'genesis_do_post_title' );` |
+| aet   | add entry title | `add_action( '$1', 'genesis_do_post_title' );` |
+| rei   | remove entry image | `remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );` |
+| aei   | add entry image | `add_action( '$1', 'genesis_do_post_format_image' );` |
+| cfc   | customize footer copy | http://my.studiopress.com/snippets/footer/ |
+| rpn   | remove primary nav | `remove_action( 'genesis_after_header', 'genesis_do_nav' );` |
+| apn   | add primary nav | `add_action( '$1', 'genesis_do_nav' );` |
+| rsn   | remove secondary nav | `remove_action( 'genesis_after_header', 'genesis_do_subnav' );` |
+| asn   | add secondary nav | `add_action( '$1', '$genesis_do_subnav' );` |
+| abc   | add body class | http://my.studiopress.com/snippets/custom-body-class/ |
+| lfw   | layout full width | `add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );` |
+| rl    | remove layout (unregister) | `genesis_unregister_layout( '${1 layout-name}' );` |
