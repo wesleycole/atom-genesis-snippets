@@ -18,6 +18,7 @@ Based on what type of action you are making, then you will use a specific charac
 Genesis Snippets works in that your text that you right to call a snippet is comprised of single letters representing words. For example if you want to remove the entry header, you would type `reh` + `tab`. The `r` states that this is a remove action, the `e` is for `entry` and the `h` is for `header`. I've tried to be as sensible as I can in how I write out these snippets.
 
 ### Snippets
+The `$1` and `$2` represent placeholders where you will be able to *tab* through once you add the snippet to add your own function names.
 
 | Snippet Code  | Description | Code        |
 | ------------- | ----------- | ------------|

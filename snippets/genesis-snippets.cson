@@ -82,7 +82,7 @@
       }
     """
   "Force Full Width Layout":
-    prefix: "lf"
+    prefix: "lfw"
     body: "add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );"
   "Unregister Layout":
     prefix: "rl"
