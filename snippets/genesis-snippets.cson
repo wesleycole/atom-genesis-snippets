@@ -1,4 +1,12 @@
 ".text.html":
+  "Add New Function":
+    prefix: "af"
+    body: """
+      add_action( '$1', '${2:function-name}' );
+      function ${2:function-name}() {
+        ${3:function}
+      }
+    """
   "Add Action":
     prefix: "aa"
     body: "add_action( '$1','$2' );"
