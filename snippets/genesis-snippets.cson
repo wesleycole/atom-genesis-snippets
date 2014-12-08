@@ -79,10 +79,10 @@
   "Add Body Class":
     prefix: "abc"
     body: """
-      add_filter( 'body_class', 'sp_body_class' );
+      add_filter( 'body_class', '${1:prefix}_body_class' );
       function sp_body_class( $classes ) {
 
-    	  $classes[] = '${1 class-name}';
+    	  $classes[] = '${2:class-name}';
     	  return $classes;
 
       }
@@ -92,4 +92,4 @@
     body: "add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );"
   "Unregister Layout":
     prefix: "rl"
-    body: "genesis_unregister_layout( '${1 layout-name}' );"
+    body: "genesis_unregister_layout( '${1:layout-name}' );"
