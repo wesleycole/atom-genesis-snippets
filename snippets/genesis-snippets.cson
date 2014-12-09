@@ -80,7 +80,7 @@
     prefix: "abc"
     body: """
       add_filter( 'body_class', '${1:prefix}_body_class' );
-      function sp_body_class( $classes ) {
+      function ${1:prefix}_body_class( $classes ) {
 
     	  $classes[] = '${2:class-name}';
     	  return $classes;
