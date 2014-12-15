@@ -14,37 +14,40 @@
     prefix: "ra"
     body: "remove_action( '$1','$2' );"
   "Remove Site Title":
-    prefix: "rst"
+    prefix: "rast"
     body: "remove_action( 'genesis_site_title', 'genesis_seo_site_title' );"
   "Add Site Title":
-    prefix: "ast"
+    prefix: "aast"
     body: "add_action( '$1', 'genesis_seo_site_title' );"
   "Remove Site Description":
-    prefix: "rsd"
+    prefix: "rasd"
     body: "remove_action( 'genesis_site_description', 'genesis_seo_site_description' );"
   "Add Site Description":
-    prefix: "asd"
+    prefix: "aasd"
     body: "add_action( '$1', 'genesis_seo_site_description' );"
   "Remove Header Right Widget":
-    prefix: "rhw"
+    prefix: "rahw"
     body: "unregister_sidebar( 'header-right' );"
-  "Remove Entry Meta":
-    prefix: "rem"
+  "Remove Entry Header Meta":
+    prefix: "raehm"
     body: "remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );"
   "Add Entry Meta":
-    prefix: "aem"
-    body: "add_action( '$1', 'genesis_post_info' );"
+    prefix: "aaehm"
+    body: "add_action( '${1:hook-name}', 'genesis_post_info' );"
+  "Remove Entry Footer Meta":
+    prefix: "raefm"
+    body: "remove_action( 'genesis_entry_footer', 'genesis_post_info', 12 );"
   "Remove Entry Title":
-    prefix: "ret"
+    prefix: "raet"
     body: "remove_action( 'genesis_entry_header', 'genesis_do_post_title' );"
   "Add Entry Title":
-    prefix: "aet"
+    prefix: "aaet"
     body: "add_action( '$1', 'genesis_do_post_title' );"
   "Remove Post Image":
-    prefix: "rei"
+    prefix: "raei"
     body: "remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );"
   "Add Post Image":
-    prefix: "aei"
+    prefix: "aaei"
     body: "add_action( '$1', 'genesis_do_post_format_image' );"
   "Customize Footer":
     prefix: "cfc"
@@ -58,12 +61,12 @@
       }
     """
   "Remove Primary Nav":
-    prefix: "rpn"
+    prefix: "rapn"
     body: """
       remove_action( 'genesis_after_header', 'genesis_do_nav' );
     """
   "Add Primary Nav":
-    prefix: "apn"
+    prefix: "aapn"
     body: "add_action( '$1', 'genesis_do_nav' );"
   "Remove Secondary Nav":
     prefix: "rsn"
@@ -71,13 +74,13 @@
       remove_action( 'genesis_after_header', 'genesis_do_subnav' );
     """
   "Add Secondary Nav":
-    prefix: "asn"
+    prefix: "aasn"
     body: "add_action( '$1', '$genesis_do_subnav' );"
   "Unregister Nav":
     prefix: "atsn"
     body: "add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );"
   "Add Body Class":
-    prefix: "abc"
+    prefix: "afbc"
     body: """
       add_filter( 'body_class', '${1:prefix}_body_class' );
       function ${1:prefix}_body_class( $classes ) {
@@ -88,8 +91,8 @@
       }
     """
   "Force Full Width Layout":
-    prefix: "lfw"
+    prefix: "aflfw"
     body: "add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );"
   "Unregister Layout":
-    prefix: "rl"
+    prefix: "ral"
     body: "genesis_unregister_layout( '${1:layout-name}' );"
