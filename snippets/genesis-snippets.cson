@@ -2,9 +2,9 @@
   "Add New Function":
     prefix: "af"
     body: """
-      add_action( '$1', '${2:function-name}' );
+      add_action( '$1', '${2:function-name}', '${3:priority}' );
       function ${2:function-name}() { ?>
-        ${3:function}
+          ${4:function}
       <?php }
     """
   "Add Action":
