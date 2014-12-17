@@ -13,8 +13,8 @@
       'label': 'genesis-snippets'
       'submenu': [
         {
-          'label': 'Toggle'
-          'command': 'genesis-snippets:toggle'
+          'label': 'List'
+          'command': 'genesis-snippets:list'
         }
       ]
     ]
