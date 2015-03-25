@@ -1,4 +1,4 @@
-".text.html":
+".text.html.php":
   "Add New Function":
     prefix: "af"
     body: """
