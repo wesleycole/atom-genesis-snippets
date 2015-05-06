@@ -1,101 +1,180 @@
 ".text.html.php":
-  "Add New Function":
-    prefix: "af"
-    body: """
-      add_action( '${1:genesis_hook_name}', '${2:function_name}', ${3:priority} );
-      function ${2:function_name}() { ?>
-          ${4:function}
-      <?php }
-    """
-  "Add Action":
-    prefix: "aa"
-    body: "add_action( '${1:genesis_hook_name}', '${2:function_name}' );"
-  "Remove Action":
-    prefix: "ra"
-    body: "remove_action( '${1:genesis_hook_name}', '${2:function_name}' );"
-  "Remove Loop":
-    prefix: "ragl"
-    body: "remove_action( 'genesis_loop', 'genesis_do_loop' );"
-  "Remove Site Title":
-    prefix: "rast"
-    body: "remove_action( 'genesis_site_title', 'genesis_seo_site_title' );"
-  "Add Site Title":
-    prefix: "aast"
-    body: "add_action( '${1:genesis_hook_name}', 'genesis_seo_site_title' );"
-  "Remove Site Description":
-    prefix: "rasd"
-    body: "remove_action( 'genesis_site_description', 'genesis_seo_site_description' );"
-  "Add Site Description":
-    prefix: "aasd"
-    body: "add_action( '${1:genesis_hook_name}', 'genesis_seo_site_description' );"
-  "Remove Header Right Widget":
-    prefix: "rahw"
-    body: "unregister_sidebar( 'header-right' );"
-  "Remove Entry Header Meta":
-    prefix: "raehm"
-    body: "remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );"
-  "Add Entry Meta":
-    prefix: "aaehm"
-    body: "add_action( '${1:genesis_hook_name}', 'genesis_post_info' );"
-  "Remove Entry Footer Meta":
-    prefix: "raefm"
-    body: "remove_action( 'genesis_entry_footer', 'genesis_post_info', 12 );"
-  "Remove Entry Title":
-    prefix: "raet"
-    body: "remove_action( 'genesis_entry_header', 'genesis_do_post_title' );"
-  "Add Entry Title":
-    prefix: "aaet"
-    body: "add_action( '${1:genesis_hook_name}', 'genesis_do_post_title' );"
-  "Remove Post Image":
-    prefix: "raei"
-    body: "remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );"
-  "Add Post Image":
-    prefix: "aaei"
-    body: "add_action( '${1:genesis_hook_name}', 'genesis_do_post_format_image' );"
-  "Customize Footer":
-    prefix: "cfc"
-    body: """
-      remove_action( 'genesis_footer', 'genesis_do_footer' );
-      add_action( 'genesis_footer', 'sp_custom_footer' );
-      function sp_custom_footer() {
-      ?>
-        <p>&copy; Copyright 2012 <a href='${1:domain}'>${2:name}</a> &middot; All Rights Reserved &middot; Powered by <a href='http://wordpress.org/'>WordPress</a> &middot; <a href='http://${3:domain}/wp-admin'>Admin</a></p>
-      <?php
-      }
-    """
-  "Remove Primary Nav":
-    prefix: "rapn"
-    body: """
-      remove_action( 'genesis_after_header', 'genesis_do_nav' );
-    """
-  "Add Primary Nav":
-    prefix: "aapn"
-    body: "add_action( '${1:genesis_hook_name}', 'genesis_do_nav' );"
-  "Remove Secondary Nav":
-    prefix: "rsn"
-    body: """
-      remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-    """
-  "Add Secondary Nav":
-    prefix: "aasn"
-    body: "add_action( '${1:genesis_hook_name}', 'genesis_do_subnav' );"
-  "Unregister Nav":
-    prefix: "atsn"
-    body: "add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );"
-  "Add Body Class":
-    prefix: "afbc"
-    body: """
-      add_filter( 'body_class', '${1:prefix}_body_class' );
-      function ${1:prefix}_body_class( $classes ) {
+    "Add New Function":
+        prefix: "af"
+        body: """
+            add_action( '${1:genesis_hook_name}', '${2:function_name}', ${3:priority} );
+            function ${2:function_name}() { ?>
+                ${4:function}
+            <?php }
+        """
+    "Add Action":
+        prefix: "aa"
+        body: "add_action( '${1:genesis_hook_name}', '${2:function_name}' );"
+    "Remove Action":
+        prefix: "ra"
+        body: "remove_action( '${1:genesis_hook_name}', '${2:function_name}' );"
+    "Remove Loop":
+        prefix: "ragl"
+        body: "remove_action( 'genesis_loop', 'genesis_do_loop' );"
+    "Remove Site Title":
+        prefix: "rast"
+        body: "remove_action( 'genesis_site_title', 'genesis_seo_site_title' );"
+    "Add Site Title":
+        prefix: "aast"
+        body: "add_action( '${1:genesis_hook_name}', 'genesis_seo_site_title' );"
+    "Remove Site Description":
+        prefix: "rasd"
+        body: "remove_action( 'genesis_site_description', 'genesis_seo_site_description' );"
+    "Add Site Description":
+        prefix: "aasd"
+        body: "add_action( '${1:genesis_hook_name}', 'genesis_seo_site_description' );"
+    "Remove Header Right Widget":
+        prefix: "rahw"
+        body: "unregister_sidebar( 'header-right' );"
+    "Remove Entry Header Meta":
+        prefix: "raehm"
+        body: "remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );"
+    "Add Entry Meta":
+        prefix: "aaehm"
+        body: "add_action( '${1:genesis_hook_name}', 'genesis_post_info' );"
+    "Remove Entry Footer Meta":
+        prefix: "raefm"
+        body: "remove_action( 'genesis_entry_footer', 'genesis_post_info', 12 );"
+    "Remove Entry Title":
+        prefix: "raet"
+        body: "remove_action( 'genesis_entry_header', 'genesis_do_post_title' );"
+    "Add Entry Title":
+        prefix: "aaet"
+        body: "add_action( '${1:genesis_hook_name}', 'genesis_do_post_title' );"
+    "Remove Post Image":
+        prefix: "raei"
+        body: "remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );"
+    "Add Post Image":
+        prefix: "aaei"
+        body: "add_action( '${1:genesis_hook_name}', 'genesis_do_post_format_image' );"
+    "Customize Footer":
+        prefix: "cfc"
+        body: """
+            remove_action( 'genesis_footer', 'genesis_do_footer' );
+            add_action( 'genesis_footer', 'sp_custom_footer' );
+            function sp_custom_footer() {
+                ?>
+                <p>&copy; Copyright 2012 <a href='${1:domain}'>${2:name}</a> &middot; All Rights Reserved &middot; Powered by <a href='http://wordpress.org/'>WordPress</a> &middot; <a href='http://${3:domain}/wp-admin'>Admin</a></p>
+                <?php
+            }
+        """
+    "Remove Primary Nav":
+        prefix: "rapn"
+        body: """
+            remove_action( 'genesis_after_header', 'genesis_do_nav' );
+        """
+    "Add Primary Nav":
+        prefix: "aapn"
+        body: "add_action( '${1:genesis_hook_name}', 'genesis_do_nav' );"
+    "Remove Secondary Nav":
+        prefix: "rsn"
+        body: """
+            remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+        """
+    "Add Secondary Nav":
+        prefix: "aasn"
+        body: "add_action( '${1:genesis_hook_name}', 'genesis_do_subnav' );"
+    "Unregister Nav":
+        prefix: "atsn"
+        body: "add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );"
+    "Add Body Class":
+        prefix: "afbc"
+        body: """
+            add_filter( 'body_class', '${1:prefix}_body_class' );
+            function ${1:prefix}_body_class( $classes ) {
 
-    	  $classes[] = '${2:class-name}';
-    	  return $classes;
+                $classes[] = '${2:class-name}';
+                return $classes;
 
-      }
-    """
-  "Force Full Width Layout":
-    prefix: "aflfw"
-    body: "add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );"
-  "Unregister Layout":
-    prefix: "ral"
-    body: "genesis_unregister_layout( '${1:layout-name}' );"
+            }
+        """
+    "Force Full Width Layout":
+        prefix: "aflfw"
+        body: "add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );"
+    "Unregister Layout":
+        prefix: "ral"
+        body: "genesis_unregister_layout( '${1:layout-name}' );"
+    "WP Query Args":
+        prefix: "queryargs"
+        body: """
+            <?php
+            $args = array(
+                'post_type' => '${1:post_type}',
+                'posts_per_page' => '${2:posts_per_page}',
+            );
+            ?>
+        """
+    "WP Query":
+        prefix: "wpquery"
+        body: """
+            <?php ${1:query_var} = new WP_Query( $args ); ?>
+            <?php if ( ${1:query_var}->have_posts() ) : ?>
+                <?php while ( ${1:query_var}->have_posts() ) : ${1:query_var}->the_post(); ?>
+
+            		<?php do_action( 'genesis_before_entry' ); ?>
+
+            		<?php printf( '<article %s>', genesis_attr( 'entry' ) ); ?>
+
+            			<?php do_action( 'genesis_entry_header' ); ?>
+
+            			<?php do_action( 'genesis_before_entry_content' ); ?>
+            			<?php printf( '<div %s>', genesis_attr( 'entry-content' ) ); ?>
+            				<?php do_action( 'genesis_entry_content' ); ?>
+            			<?php echo '</div>'; //* end .entry-content ?>
+            			<?php do_action( 'genesis_after_entry_content' ); ?>
+
+            			<?php do_action( 'genesis_entry_footer' ); ?>
+
+            		<?php echo '</article>'; ?>
+
+            		<?php do_action( 'genesis_after_entry' ); ?>
+
+            	<?php endwhile; //* end of one post ?>
+            	<?php do_action( 'genesis_after_endwhile' ); ?>
+
+            <?php else : //* if no posts exist ?>
+            	<?php do_action( 'genesis_loop_else' ); ?>
+            <?php endif; //* end loop ?>
+        """
+    "Loop":
+        prefix: "loop"
+        body: """
+        	<?php
+            if ( ! genesis_html5() ) {
+        		genesis_legacy_loop();
+        		return;
+        	}
+            ?>
+
+        	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        			<?php do_action( 'genesis_before_entry' ); ?>
+
+        			<?php printf( '<article %s>', genesis_attr( 'entry' ) ); ?>
+
+        				<?php do_action( 'genesis_entry_header' ); ?>
+
+        				<?php do_action( 'genesis_before_entry_content' ); ?>
+        				<?php printf( '<div %s>', genesis_attr( 'entry-content' ) ); ?>
+        					<?php do_action( 'genesis_entry_content' ); ?>
+        				<?php echo '</div>'; //* end .entry-content ?>
+        				<?php do_action( 'genesis_after_entry_content' ); ?>
+
+        				<?php do_action( 'genesis_entry_footer' ); ?>
+
+        			<?php echo '</article>'; ?>
+
+        			<?php do_action( 'genesis_after_entry' ); ?>
+
+        		<?php endwhile; //* end of one post ?>
+        		<?php do_action( 'genesis_after_endwhile' ); ?>
+
+        	<?php else : //* if no posts exist ?>
+        		<?php do_action( 'genesis_loop_else' ); ?>
+        	<?php endif; //* end loop ?>
+        """

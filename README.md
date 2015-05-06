@@ -45,6 +45,9 @@ The `$1` and `$2` represent placeholders where you will be able to *tab* through
 | afbc   | add body class | http://my.studiopress.com/snippets/custom-body-class/ |
 | aflfw   | layout full width | `add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );` |
 | ral    | remove layout (unregister) | `genesis_unregister_layout( '${1 layout-name}' );` |
+| queryargs | add WP Query Arg Array }
+| wpquery | add new WP Query |
+| loop | add loop |
 
 ## Notes
 This may not work with other autocomplete packages. I am going to do some testing with major packages like Emmet to see how it handles the prefixes that I am using.
