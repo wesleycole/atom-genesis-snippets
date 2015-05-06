@@ -2,29 +2,32 @@
   "Add New Function":
     prefix: "af"
     body: """
-      add_action( '${1:genesis-hook}', '${2:function-name}', '${3:priority}' );
-      function ${2:function-name}() { ?>
+      add_action( '${1:genesis_hook_name}', '${2:function_name}', ${3:priority} );
+      function ${2:function_name}() { ?>
           ${4:function}
       <?php }
     """
   "Add Action":
     prefix: "aa"
-    body: "add_action( '${1:genesis-hook}','${2:function-name}' );"
+    body: "add_action( '${1:genesis_hook_name}', '${2:function_name}' );"
   "Remove Action":
     prefix: "ra"
-    body: "remove_action( '${1:genesis-hook}','${2:function-name}' );"
+    body: "remove_action( '${1:genesis_hook_name}', '${2:function_name}' );"
+  "Remove Loop":
+    prefix: "ragl"
+    body: "remove_action( 'genesis_loop', 'genesis_do_loop' );"
   "Remove Site Title":
     prefix: "rast"
     body: "remove_action( 'genesis_site_title', 'genesis_seo_site_title' );"
   "Add Site Title":
     prefix: "aast"
-    body: "add_action( '${1:genesis-hook}', 'genesis_seo_site_title' );"
+    body: "add_action( '${1:genesis_hook_name}', 'genesis_seo_site_title' );"
   "Remove Site Description":
     prefix: "rasd"
     body: "remove_action( 'genesis_site_description', 'genesis_seo_site_description' );"
   "Add Site Description":
     prefix: "aasd"
-    body: "add_action( '${1:genesis-hook}', 'genesis_seo_site_description' );"
+    body: "add_action( '${1:genesis_hook_name}', 'genesis_seo_site_description' );"
   "Remove Header Right Widget":
     prefix: "rahw"
     body: "unregister_sidebar( 'header-right' );"
@@ -33,7 +36,7 @@
     body: "remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );"
   "Add Entry Meta":
     prefix: "aaehm"
-    body: "add_action( '${1:genesis-hook}', 'genesis_post_info' );"
+    body: "add_action( '${1:genesis_hook_name}', 'genesis_post_info' );"
   "Remove Entry Footer Meta":
     prefix: "raefm"
     body: "remove_action( 'genesis_entry_footer', 'genesis_post_info', 12 );"
@@ -42,13 +45,13 @@
     body: "remove_action( 'genesis_entry_header', 'genesis_do_post_title' );"
   "Add Entry Title":
     prefix: "aaet"
-    body: "add_action( '${1:genesis-hook}', 'genesis_do_post_title' );"
+    body: "add_action( '${1:genesis_hook_name}', 'genesis_do_post_title' );"
   "Remove Post Image":
     prefix: "raei"
     body: "remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );"
   "Add Post Image":
     prefix: "aaei"
-    body: "add_action( '${1:genesis-hook}', 'genesis_do_post_format_image' );"
+    body: "add_action( '${1:genesis_hook_name}', 'genesis_do_post_format_image' );"
   "Customize Footer":
     prefix: "cfc"
     body: """
@@ -67,7 +70,7 @@
     """
   "Add Primary Nav":
     prefix: "aapn"
-    body: "add_action( '${1:genesis-hook}', 'genesis_do_nav' );"
+    body: "add_action( '${1:genesis_hook_name}', 'genesis_do_nav' );"
   "Remove Secondary Nav":
     prefix: "rsn"
     body: """
@@ -75,7 +78,7 @@
     """
   "Add Secondary Nav":
     prefix: "aasn"
-    body: "add_action( '${1:genesis-hook}', 'genesis_do_subnav' );"
+    body: "add_action( '${1:genesis_hook_name}', 'genesis_do_subnav' );"
   "Unregister Nav":
     prefix: "atsn"
     body: "add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );"
